@@ -3,18 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iconic Mid-Century Chairs</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Iconic Mid‑Century Chairs</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #f4f1e9;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #e3d9c6;
+      border-bottom: 4px solid #c6b89e;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 20px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .chair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+      align-items: center;
+    }
+
+    .chair:nth-child(even) {
+      direction: rtl;
+    }
+
+    .chair:nth-child(even) .text {
+      direction: ltr;
+    }
+
+    .chair img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #403b36;
+    }
+
+    .text p {
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    @media(max-width: 700px) {
+      .chair {
+        grid-template-columns: 1fr;
+      }
+    }
+    .parallax {
+      background-image: url('assets/images/eames-lounge.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .parallax h1,
+    .parallax p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .parallax::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+    }
+
+  .parallax-break {
+      width: 100%;
+      height: 300px;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+</style>
 </head>
 <body>
-  <header>
-    <h1>Iconic Mid-Century Chairs</h1>
+  <header class="parallax">
+    <h1>Iconic Mid‑Century Chairs</h1>
     <p>A curated selection of the most emblematic chair designs from the golden age of modernism — timeless silhouettes, organic materials, and the spirit of innovation.</p>
   </header>
 
+  <div class="parallax-break" style="background-image:url('assets/images/barcelona.jpg');"></div>
+
   <section>
     <div class="chair">
-      <img src="assets/images/eames-lounge.jpg" alt="Eames Lounge Chair" />
+      <img src="IMAGE_URL_1" alt="Eames Lounge Chair" />
       <div class="text">
         <h2>1. Eames Lounge Chair (1956)</h2>
         <p>Designed by Charles & Ray Eames, this lounge chair perfectly blends comfort with craftsmanship. Molded plywood, rich leather, and a silhouette that became a symbol of modern luxury.</p>
@@ -22,23 +139,23 @@
     </div>
 
     <div class="chair">
-      <img src="assets/images/wishbone.jpg" alt="Wishbone Chair" />
+      <img src="IMAGE_URL_2" alt="Wishbone Chair" />
       <div class="text">
         <h2>2. CH24 Wishbone Chair (1949)</h2>
-        <p>Hans J. Wegner’s iconic chair is inspired by Ming Dynasty furniture. Its Y-shaped back and paper-cord seat make it both sculptural and inviting.</p>
+        <p>Hans J. Wegner’s iconic chair is inspired by Ming Dynasty furniture. Its Y‑shaped back and paper‑cord seat make it both sculptural and inviting.</p>
       </div>
     </div>
 
     <div class="chair">
-      <img src="assets/images/panton.jpg" alt="Panton Chair" />
+      <img src="IMAGE_URL_3" alt="Panton Chair" />
       <div class="text">
         <h2>3. Panton Chair (1960)</h2>
-        <p>Verner Panton created the first fully plastic, single-mold chair. Its bold curves and futuristic form define the playful, experimental side of mid-century modernism.</p>
+        <p>Verner Panton created the first fully plastic, single‑mold chair. Its bold curves and futuristic form define the playful, experimental side of mid‑century modernism.</p>
       </div>
     </div>
 
     <div class="chair">
-      <img src="assets/images/barcelona.jpg" alt="Barcelona Chair" />
+      <img src="IMAGE_URL_4" alt="Barcelona Chair" />
       <div class="text">
         <h2>4. Barcelona Chair (1929)</h2>
         <p>Ludwig Mies van der Rohe designed this chair for the German Pavilion at the Barcelona International Exposition. Sleek, architectural, and eternally elegant.</p>
@@ -46,7 +163,7 @@
     </div>
 
     <div class="chair">
-      <img src="assets/images/egg.jpg" alt="Egg Chair" />
+      <img src="IMAGE_URL_5" alt="Egg Chair" />
       <div class="text">
         <h2>5. Egg Chair (1958)</h2>
         <p>Arne Jacobsen designed the Egg Chair for the SAS Royal Hotel in Copenhagen. Its enveloping shape creates a sense of privacy and comfort while remaining stylish and modern.</p>
@@ -55,15 +172,9 @@
   </section>
 
   <footer>
-    <p>© 2025 — Mid-Century Design Showcase</p>
-    <p>Image credits:</p>
-    <ul>
-      <li>Eames Lounge Chair – Wikimedia Commons (Public domain) :contentReference[oaicite:10]{index=10}</li>
-      <li>Wishbone Chair – Wikimedia Commons (Public domain) :contentReference[oaicite:11]{index=11}</li>
-      <li>Panton Chair – Wikimedia Commons (CC) :contentReference[oaicite:12]{index=12}</li>
-      <li>Barcelona Chair – Wikimedia Commons (CC-BY-SA) :contentReference[oaicite:13]{index=13}</li>
-      <li>Egg Chair – Wikimedia Commons (CC-BY-SA) :contentReference[oaicite:14]{index=14}</li>
-    </ul>
+    © 2025 — Mid‑Century Design Showcase
   </footer>
+  <div class="parallax-break" style="background-image:url('assets/images/egg.jpg');"></div>
+
 </body>
 </html>
