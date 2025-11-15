@@ -119,6 +119,18 @@
       background-repeat: no-repeat;
     }
 
+  /* Fade-in on scroll */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 </style>
 </head>
 <body>
@@ -129,8 +141,8 @@
 
   <div class="parallax-break" style="background-image:url('assets/images/barcelona.jpg');"></div>
 
-  <section>
-    <div class="chair">
+  <section class="fade-section">
+    <div class="chair fade-in">
       <img src="assets/images/eames-lounge.jpg" alt="Eames Lounge Chair" />
       <div class="text">
         <h2>1. Eames Lounge Chair (1956)</h2>
@@ -138,7 +150,7 @@
       </div>
     </div>
 
-    <div class="chair">
+    <div class="chair fade-in">
       <img src="assets/images/wishbone.jpg" alt="Wishbone Chair" />
       <div class="text">
         <h2>2. CH24 Wishbone Chair (1949)</h2>
@@ -146,7 +158,7 @@
       </div>
     </div>
 
-    <div class="chair">
+    <div class="chair fade-in">
       <img src="assets/images/panton.jpg" alt="Panton Chair" />
       <div class="text">
         <h2>3. Panton Chair (1960)</h2>
@@ -154,7 +166,7 @@
       </div>
     </div>
 
-    <div class="chair">
+    <div class="chair fade-in">
       <img src="assets/images/barcelona.jpg" alt="Barcelona Chair" />
       <div class="text">
         <h2>4. Barcelona Chair (1929)</h2>
@@ -162,7 +174,7 @@
       </div>
     </div>
 
-    <div class="chair">
+    <div class="chair fade-in">
       <img src="assets/images/egg.jpg" alt="Egg Chair" />
       <div class="text">
         <h2>5. Egg Chair (1958)</h2>
@@ -176,5 +188,20 @@
   </footer>
   <div class="parallax-break" style="background-image:url('assets/images/egg.jpg');"></div>
 
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    faders.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
